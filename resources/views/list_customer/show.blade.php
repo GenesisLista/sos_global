@@ -24,6 +24,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $voucher->withQueryString()->links('pagination::bootstrap-5') !!}
                 </div>
             </div>
         </div>

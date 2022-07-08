@@ -8,12 +8,12 @@
             <div class="card">
                 <div class="card-header">
                     @if($voucher_remaining != 0)
-                        <a href="{{ route('customer.create') }}" class="btn btn-primary"> Add </a>
-                        <span> <strong>Voucher Remaining : </strong></span> {{ $voucher_remaining }}
+                    <a href="{{ route('customer.create') }}" class="btn btn-primary"> Add </a>
+                    <span> <strong>Voucher Remaining : </strong></span> {{ $voucher_remaining }}
                     @else
-                        <span> <strong>Voucher Remaining : </strong></span> {{ $voucher_remaining }}
+                    <span> <strong>Voucher Remaining : </strong></span> {{ $voucher_remaining }}
                     @endif
-                    
+
                 </div>
 
                 <div class="card-body">
@@ -49,6 +49,7 @@
                             @endforeach
                         </tbody>
                     </table>
+                    {!! $voucher->withQueryString()->links('pagination::bootstrap-5') !!}
                 </div>
             </div>
         </div>

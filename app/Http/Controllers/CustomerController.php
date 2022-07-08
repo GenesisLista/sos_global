@@ -31,7 +31,7 @@ class CustomerController extends Controller
         $voucher_default = 10;
         $voucher_count = Voucher::whereUserId($user_id)->count();
         $voucher_remaining = $voucher_default - $voucher_count;
-        $voucher = Voucher::whereUserId($user_id)->get();
+        $voucher = Voucher::whereUserId($user_id)->paginate(5);
 
         // Group details
         $group = CustomerGroup::with(['groups'])->findOrFail($user_id);

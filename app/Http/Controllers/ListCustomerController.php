@@ -50,7 +50,7 @@ class ListCustomerController extends Controller
      */
     public function show($id)
     {
-        $voucher = Voucher::where('user_id', $id)->get();
+        $voucher = Voucher::where('user_id', $id)->paginate(5);
         return view('list_customer.show')->with([
             'voucher' => $voucher
         ]);
